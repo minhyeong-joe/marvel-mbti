@@ -1,4 +1,30 @@
-@import "./typography";
+@import "./_typography";
+@import "./variables";
+
+// common styles
+
+.btn {
+	display: inline-block;
+	padding: 10px 40px;
+	border: none;
+	cursor: pointer;
+	border-radius: 12px;
+	font-size: 1.5rem;
+	color: white;
+	text-decoration: none;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+	}
+}
+.btn-primary {
+	background-color: $color-primary;
+}
+.btn-secondary {
+	background-color: $color-secondary;
+}
 
 // App
 .app-container {
@@ -24,13 +50,15 @@
 	height: 100%;
 	position: absolute;
 }
+
+// landing
 .landing {
 	margin-top: 20vh;
 }
 .app-title {
 	font-size: 5rem;
 	text-align: center;
-	text-shadow: 1px 1px 3px #555;
+	text-shadow: 1px 1px 3px $color-text-shadow;
 	span:first-child {
 		// M
 		color: #3c59e5;
@@ -49,13 +77,13 @@
 	}
 	span:last-child {
 		// 마블
-		color: #f0131e;
+		color: $color-primary;
 	}
 }
 .sub-title {
 	font-size: 1.4rem;
 	transform: translateX(-180px) rotateZ(-15deg);
-	text-shadow: 0px 0px 2px #555;
+	text-shadow: 0px 0px 2px $color-text-shadow;
 	text-align: center;
 }
 
@@ -72,34 +100,10 @@
 .btn-container {
 	text-align: center;
 	margin-top: 50px;
-}
-.btn.start-btn {
-	display: block;
+	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
+}
+.btn.start-btn {
 	margin-bottom: 200px;
-}
-
-// common styles
-
-.btn {
-	display: inline-block;
-	padding: 10px 40px;
-	border: none;
-	cursor: pointer;
-	border-radius: 12px;
-	font-size: 1.5rem;
-	color: white;
-	&:focus {
-		outline: none;
-	}
-	&:hover {
-		box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
-	}
-}
-.btn-primary {
-	background-color: #f0131e;
-}
-.btn-secondary {
-	background-color: #f3d403;
 }
