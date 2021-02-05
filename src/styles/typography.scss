@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Sunflower:wght@500&display=swap");
+
+$font-title: "Jua", sans-serif;
+$font-primary: "Do Hyeon", sans-serif;
+$font-secondary: "Sunflower", sans-serif;
+
+h1,
+h2 {
+	font-family: $font-title;
+}
+h3,
+h4,
+h5,
+h6,
+.font-primary {
+	font-family: $font-primary;
+}
+p,
+span,
+div,
+.font-secondary,
+button {
+	font-family: $font-secondary;
+}

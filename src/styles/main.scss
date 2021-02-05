@@ -1,0 +1,105 @@
+@import "./typography";
+
+// App
+.app-container {
+	width: 100vw;
+	max-width: 700px;
+	background-color: #ccc;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+	align-items: center;
+	background-image: url("../assets/avengers_poster.jpg");
+	background-repeat: no-repeat;
+	background-position: center 30%;
+	background-size: cover;
+	position: relative;
+}
+.bg-overlay {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.landing {
+	margin-top: 20vh;
+}
+.app-title {
+	font-size: 5rem;
+	text-align: center;
+	text-shadow: 1px 1px 3px #555;
+	span:first-child {
+		// M
+		color: #3c59e5;
+	}
+	span:nth-child(2) {
+		// B
+		color: #d246c7;
+	}
+	span:nth-child(3) {
+		// T
+		color: #ff866a;
+	}
+	span:nth-child(4) {
+		// I
+		color: #f9f871;
+	}
+	span:last-child {
+		// 마블
+		color: #f0131e;
+	}
+}
+.sub-title {
+	font-size: 1.4rem;
+	transform: translateX(-180px) rotateZ(-15deg);
+	text-shadow: 0px 0px 2px #555;
+	text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+	.app-title {
+		font-size: 3rem;
+	}
+	.sub-title {
+		font-size: 1rem;
+		transform: translateX(-60px) translateY(-10px) rotateZ(-10deg);
+	}
+}
+
+.btn-container {
+	text-align: center;
+	margin-top: 50px;
+}
+.btn.start-btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 200px;
+}
+
+// common styles
+
+.btn {
+	display: inline-block;
+	padding: 10px 40px;
+	border: none;
+	cursor: pointer;
+	border-radius: 12px;
+	font-size: 1.5rem;
+	color: white;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+	}
+}
+.btn-primary {
+	background-color: #f0131e;
+}
+.btn-secondary {
+	background-color: #f3d403;
+}
