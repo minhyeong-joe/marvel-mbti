@@ -49,11 +49,21 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.language-select {
+	margin-top: auto;
+	align-self: flex-start;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	color: black;
 }
 
 // landing
 .landing {
-	margin-top: 20vh;
+	margin-top: 15vh;
 }
 .app-title {
 	font-size: 5rem;
@@ -105,5 +115,5 @@
 	margin-right: auto;
 }
 .btn.start-btn {
-	margin-bottom: 200px;
+	margin-bottom: 100px;
 }
