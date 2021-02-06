@@ -199,8 +199,12 @@
 		}
 	}
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	.question-container {
 		padding: 0 10px;
+	}
+	.option-btn:hover {
+		transform: none !important;
+		filter: none !important;
 	}
 }
