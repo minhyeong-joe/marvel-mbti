@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../LanguageContext";
 
 const Landing = () => {
+	const [lang, setLang] = useContext(LanguageContext);
+	console.log(lang);
 	return (
 		<div className="landing">
 			<p className="sub-title">마블 세계관속에 나는 누구일까?</p>
