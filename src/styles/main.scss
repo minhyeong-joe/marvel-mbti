@@ -26,6 +26,9 @@
 	background-color: $color-secondary;
 	color: black;
 }
+.btn-rounded {
+	border-radius: 20px;
+}
 
 // App
 .app-container {
@@ -150,7 +153,7 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin-bottom: 200px;
+	margin-bottom: 80px;
 
 	.number {
 		font-size: 2rem;
@@ -193,6 +196,9 @@
 		&:first-child {
 			margin-bottom: 10px;
 		}
+		&:nth-child(2) {
+			margin-bottom: 150px;
+		}
 		&:hover {
 			transform: scale(1.05);
 			filter: brightness(150%);
@@ -206,5 +212,23 @@
 	.option-btn:hover {
 		transform: none !important;
 		filter: none !important;
+	}
+}
+
+// result
+.result-container {
+	margin-top: 20px;
+	text-align: center;
+	.adj {
+		font-size: 1.4rem;
+		font-weight: 600;
+		text-shadow: 1px 1px 3px $color-text-shadow;
+	}
+	.job {
+		font-size: 1.2rem;
+		font-weight: 600;
+		font-style: italic;
+		line-height: 3rem;
+		text-shadow: 1px 1px 3px $color-text-shadow;
 	}
 }

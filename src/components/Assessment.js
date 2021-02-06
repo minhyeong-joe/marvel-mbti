@@ -1,7 +1,10 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { TiArrowBack } from "react-icons/ti";
 
 import { LanguageContext } from "../LanguageContext";
 import { questions } from "../questions";
+import Constants from "../language";
 
 const Assessment = ({ history }) => {
 	const [lang, setLang] = useContext(LanguageContext);
@@ -58,6 +61,10 @@ const Assessment = ({ history }) => {
 					>
 						{questions[currentQ].optionB[lang]}
 					</button>
+					<Link to="/" className="btn btn-secondary btn-rounded">
+						<TiArrowBack />
+						{Constants.backToMenu[lang]}
+					</Link>
 				</div>
 			</div>
 		</>

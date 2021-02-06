@@ -21,6 +21,22 @@ const Constants = {
 		kr: "친구들에게 공유",
 		en: "Share with Friends",
 	},
+	backToMenu: {
+		kr: "처음부터",
+		en: "Back to Menu",
+	},
+	description: {
+		kr: "성향",
+		en: "Personality",
+	},
+	goodWith: {
+		kr: "좋은 상성",
+		en: "Get along well with",
+	},
+	badWith: {
+		kr: "나쁜 상성",
+		en: "Don't get along with",
+	},
 };
 
 export default Constants;
