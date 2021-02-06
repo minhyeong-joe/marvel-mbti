@@ -32,10 +32,18 @@ const Assessment = ({ history }) => {
 	console.log(scores);
 	return (
 		<>
-			<p className="question-counter">
-				{currentQ + 1} / {questions.length}
-			</p>
-			<div className="question-container">
+			<div className="progress">
+				<p className="question-counter">
+					{currentQ + 1} / {questions.length}
+				</p>
+				<div className="progress-bar">
+					<div
+						className="progress-percentage"
+						style={{ width: `${((currentQ + 1) / questions.length) * 100}%` }}
+					></div>
+				</div>
+			</div>
+			<div className="question-container" key={currentQ}>
 				<h1 className="number">Q.{currentQ + 1}</h1>
 				<h2 className="prompt">{questions[currentQ].prompt[lang]}</h2>
 				<div className="options-container">
@@ -61,12 +69,13 @@ const Assessment = ({ history }) => {
 					>
 						{questions[currentQ].optionB[lang]}
 					</button>
-					<Link to="/" className="btn btn-secondary btn-rounded">
-						<TiArrowBack />
-						{Constants.backToMenu[lang]}
-					</Link>
 				</div>
 			</div>
+
+			<Link to="/" className="btn btn-secondary btn-rounded btn-menu">
+				<TiArrowBack />
+				{Constants.backToMenu[lang]}
+			</Link>
 		</>
 	);
 };

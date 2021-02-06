@@ -14,7 +14,7 @@ const Constants = {
 		en: "한글",
 	},
 	start: {
-		kr: "시작하기",
+		kr: "알아보기",
 		en: "Start",
 	},
 	share: {

@@ -15,6 +15,8 @@ const images = {
 	esfj: require("./antman.jpg"),
 	enfj: require("./loki.jpg"),
 	entj: require("./nick_fury.jpg"),
+	ironman: require("./ironman.png"),
+	captain_america: require("./captain_america.png"),
 };
 
 export default images;

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { GrLanguage } from "react-icons/gr";
+import { FaGlobe } from "react-icons/fa";
 
 import "../styles/reset.scss";
 import "../styles/main.scss";
@@ -15,14 +15,15 @@ const App = () => {
 		<BrowserRouter>
 			<LanguageProvider>
 				<div className="app-container">
-					<div className="bg-overlay">
+					<div className="bg-overlay"></div>
+					<div className="main-content">
 						<Route path="/" exact component={Landing} />
 						<Route path="/assessment" exact component={Assessment} />
 						<Route path="/result/:mbti" exact component={Result} />
-						<div className="language-select-container">
-							<GrLanguage />
-							<LanguageSwitch />
-						</div>
+					</div>
+					<div className="language-select-container">
+						<FaGlobe color="white" />
+						<LanguageSwitch />
 					</div>
 				</div>
 			</LanguageProvider>
