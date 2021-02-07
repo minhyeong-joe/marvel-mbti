@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import { LanguageContext } from "../LanguageContext";
 import Constants from "../constants";
@@ -11,6 +12,15 @@ import "../styles/landing.scss";
 
 const Landing = () => {
 	const [lang, _] = useContext(LanguageContext);
+	const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		(async () => {
+			const { data } = await axios.get(Constants.backendUrl);
+			setCount(data.count);
+		})();
+	}, []);
+
 	return (
 		<div className="landing">
 			<p
@@ -32,7 +42,11 @@ const Landing = () => {
 					imageUrl={`${Constants.s3BaseUrl}/landing.jpg`}
 					sharedUrl={window.location.origin}
 				/>
-				<Count label={Constants.participants[lang]} number="0" duration="2" />
+				<Count
+					label={Constants.participants[lang]}
+					number={count.toString()}
+					duration="1"
+				/>
 				<img
 					src={images.captain_america.default}
 					alt="captain_america"

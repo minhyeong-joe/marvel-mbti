@@ -1,5 +1,6 @@
 const Constants = {
 	s3BaseUrl: "https://marvel-mbti.s3-us-west-1.amazonaws.com",
+	backendUrl: `${window.location.protocol}//${window.location.hostname}/statistics`,
 	appName: {
 		kr:
 			"<span>M</span><span>B</span><span>T</span><span>I</span> 로 보는<br />나의 <span>마블</span> 캐릭터",

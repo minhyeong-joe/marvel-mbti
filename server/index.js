@@ -5,7 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 mongoose.connect(process.env.DB_URL, {
 	useFindAndModify: false,
