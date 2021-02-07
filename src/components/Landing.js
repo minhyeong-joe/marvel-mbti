@@ -32,7 +32,7 @@ const Landing = () => {
 					imageUrl={`${Constants.s3BaseUrl}/landing.jpg`}
 					sharedUrl={window.location.origin}
 				/>
-				<Count label={Constants.participants[lang]} number="50000" />
+				<Count label={Constants.participants[lang]} number="0" duration="2" />
 				<img
 					src={images.captain_america.default}
 					alt="captain_america"

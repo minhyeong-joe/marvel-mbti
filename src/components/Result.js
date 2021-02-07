@@ -59,6 +59,12 @@ const Result = ({ match }) => {
 					</div>
 				</div>
 			</div>
+			<p className="percentage">
+				<span>
+					<span className="percent-num">0.0</span> %
+				</span>{" "}
+				{Constants.percentage[lang]}
+			</p>
 			<Link to="/" className="btn btn-secondary btn-rounded btn-menu">
 				<TiArrowBack />
 				{Constants.backToMenu[lang]}
