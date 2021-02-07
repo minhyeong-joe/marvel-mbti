@@ -137,7 +137,7 @@
 	position: relative;
 }
 .btn.start-btn {
-	margin-bottom: 100px;
+	margin-bottom: 200px;
 }
 .landing-image {
 	height: 250px;
@@ -404,57 +404,59 @@
 	.btn-menu {
 		margin-top: 20px;
 	}
-	.share-container {
-		.header {
-			margin-top: 20px;
-			overflow: hidden;
-			&::before,
-			&::after {
-				content: "";
-				background-color: white;
-				display: inline-block;
-				height: 1px;
-				position: relative;
-				vertical-align: middle;
-				width: 40%;
-			}
+}
 
-			&::before {
-				right: 0.5em;
-				margin-left: -50%;
-			}
+.share-container {
+	.header {
+		margin-top: 20px;
+		overflow: hidden;
+		&::before,
+		&::after {
+			content: "";
+			background-color: white;
+			display: inline-block;
+			height: 1px;
+			position: relative;
+			vertical-align: middle;
+			width: 40%;
+		}
 
-			&::after {
-				left: 0.5em;
-				margin-right: -50%;
-			}
+		&::before {
+			right: 0.5em;
+			margin-left: -50%;
+		}
+
+		&::after {
+			left: 0.5em;
+			margin-right: -50%;
 		}
 	}
-	.icon-btn-container {
-		display: flex;
-		justify-content: center;
-		padding: 10px;
-		button {
-			margin-left: 5px;
-			margin-right: 5px;
-			&.katalk {
-				background-color: #ffe812;
-			}
-			&.facebook {
-				background-color: #4267b2;
-			}
+}
+.icon-btn-container {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	button {
+		margin-left: 5px;
+		margin-right: 5px;
+		&.katalk {
+			background-color: #ffe812;
+		}
+		&.facebook {
+			background-color: #4267b2;
 		}
 	}
-	.flash-message {
-		position: fixed;
-		top: 45%;
-		left: 10px;
-		right: 10px;
-		background-color: rgba(255, 255, 255, 0.75);
-		padding: 10px 30px;
-		border-radius: 20px;
-		p {
-			color: black;
-		}
+}
+.flash-message {
+	position: fixed;
+	top: 45%;
+	left: 10px;
+	right: 10px;
+	background-color: rgba(255, 255, 255, 0.75);
+	padding: 10px 30px;
+	border-radius: 20px;
+	z-index: 999;
+	p {
+		color: black;
 	}
 }
