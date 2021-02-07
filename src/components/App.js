@@ -15,7 +15,7 @@ const App = () => {
 		window.Kakao.init("47bbe7823395f610d6c8a559041758ca");
 	});
 	return (
-		<BrowserRouter basename={process.env.PUBLIC_URL}>
+		<BrowserRouter>
 			<LanguageProvider>
 				<div className="app-container">
 					<div className="bg-overlay"></div>

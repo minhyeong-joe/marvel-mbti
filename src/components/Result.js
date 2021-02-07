@@ -58,8 +58,8 @@ const Result = ({ match }) => {
 				description: Constants.appSubTitle[lang].replace(/(<([^>]+)>)/gi, ""),
 				imageUrl: `https://marvel-mbti.s3-us-west-1.amazonaws.com/landing.jpg`,
 				link: {
-					webUrl: window.location.origin + process.env.PUBLIC_URL,
-					mobileWebUrl: window.location.origin + process.env.PUBLIC_URL,
+					webUrl: window.location.origin,
+					mobileWebUrl: window.location.origin,
 				},
 			};
 		}
@@ -145,11 +145,7 @@ const Result = ({ match }) => {
 				<div className="icon-btn-container">
 					<button
 						className="btn btn-icon"
-						onClick={() =>
-							onClickCopyLink(
-								`${window.location.origin}${process.env.PUBLIC_URL}`
-							)
-						}
+						onClick={() => onClickCopyLink(window.location.origin)}
 					>
 						<FaCopy color="black" />
 					</button>
