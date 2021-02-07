@@ -20,9 +20,21 @@ const App = () => {
 				<div className="app-container">
 					<div className="bg-overlay"></div>
 					<div className="main-content">
-						<Route path="/" exact component={Landing} />
-						<Route path="/assessment" exact component={Assessment} />
-						<Route path="/result/:mbti" exact component={Result} />
+						<Route
+							path={`${process.env.PUBLIC_URL}/`}
+							exact
+							component={Landing}
+						/>
+						<Route
+							path={`${process.env.PUBLIC_URL}/assessment`}
+							exact
+							component={Assessment}
+						/>
+						<Route
+							path={`${process.env.PUBLIC_URL}/result/:mbti`}
+							exact
+							component={Result}
+						/>
 					</div>
 					<div className="language-select-container">
 						<FaGlobe color="white" />
