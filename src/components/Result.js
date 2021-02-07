@@ -112,12 +112,12 @@ const Result = ({ match }) => {
 					</div>
 				</div>
 			</div>
-			<div className="percentage-container">
+			{/* <div className="percentage-container">
 				<p>
 					<span>8.7</span>
 					<span>%</span> {Constants.percentage[lang]}
 				</p>
-			</div>
+			</div> */}
 			<Link to="/" className="btn btn-secondary btn-rounded btn-menu">
 				<TiArrowBack />
 				{Constants.backToMenu[lang]}
