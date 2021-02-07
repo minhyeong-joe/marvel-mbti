@@ -6,6 +6,8 @@ import Constants from "../constants";
 import images from "../assets";
 import Share from "./Share";
 
+import "../styles/landing.scss";
+
 const Landing = () => {
 	const [lang, _] = useContext(LanguageContext);
 	return (

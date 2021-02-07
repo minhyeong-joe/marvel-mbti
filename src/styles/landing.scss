@@ -1,0 +1,59 @@
+@import "./variables";
+
+.app-title {
+	font-size: 5rem;
+	text-align: center;
+	text-shadow: 1px 1px 3px $color-text-shadow;
+	color: #ddd;
+	span:first-child {
+		// M
+		color: #3c59e5;
+	}
+	span:nth-child(2) {
+		// B
+		color: #d246c7;
+	}
+	span:nth-child(3) {
+		// T
+		color: #ff866a;
+	}
+	span:nth-child(4) {
+		// I
+		color: #f9f871;
+	}
+	span:last-child {
+		// 마블
+		color: $color-primary;
+	}
+}
+.sub-title {
+	font-size: 1.4rem;
+	transform: translateX(-180px) rotateZ(-15deg);
+	text-shadow: 0px 0px 2px $color-text-shadow;
+	text-align: center;
+}
+
+.btn-container {
+	text-align: center;
+	margin-top: 50px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+.btn.start-btn {
+	margin-top: 60px;
+	margin-bottom: 120px;
+}
+.landing-image {
+	height: 250px;
+	position: absolute;
+	&.cap_america {
+		left: -100px;
+		top: -50px;
+	}
+	&.ironman {
+		right: -80px;
+		top: -50px;
+	}
+}

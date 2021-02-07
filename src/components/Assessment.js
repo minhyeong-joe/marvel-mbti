@@ -6,6 +6,7 @@ import { LanguageContext } from "../LanguageContext";
 import { questions } from "../questions";
 import Constants from "../constants";
 import ProgressBar from "./ProgressBar";
+import "../styles/assessment.scss";
 
 const Assessment = ({ history }) => {
 	const [lang, _] = useContext(LanguageContext);

@@ -5,8 +5,8 @@ import { TiArrowBack } from "react-icons/ti";
 import Constants from "../constants";
 import { LanguageContext } from "../LanguageContext";
 import { results } from "../results";
-
 import Share from "./Share";
+import "../styles/result.scss";
 
 const Result = ({ match }) => {
 	const [lang, _] = useContext(LanguageContext);

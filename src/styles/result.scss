@@ -1,0 +1,100 @@
+@import "./typography";
+
+.result-container {
+	margin-top: 80px;
+	text-align: center;
+	margin-bottom: 20px;
+	.adj {
+		font-size: 1.4rem;
+		font-weight: 600;
+		// text-shadow: 1px 1px 1px $color-text-shadow;
+		color: #b1b1b1;
+		letter-spacing: 0.3rem;
+		font-style: italic;
+		word-wrap: break-word;
+		word-break: keep-all;
+	}
+	.job {
+		font-size: 1.8rem;
+		font-weight: 600;
+		line-height: 3rem;
+		// text-shadow: 1px 1px 3px $color-text-shadow;
+	}
+	.main-image {
+		height: 250px;
+		border: 4px double black;
+		border-radius: 12px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.name {
+		font-size: 2rem;
+		font-family: $font-title;
+		position: relative;
+		display: inline-block;
+		background-color: white;
+		color: #1b1b1b;
+		padding: 10px 40px;
+		margin: 5px 0;
+		border: 1px solid #1b1b1b;
+	}
+	.description-container {
+		background-color: rgba(0, 0, 0, 0.75);
+		color: #ddd;
+		padding: 20px 30px;
+		border-radius: 10px;
+		.description-header {
+			font-size: 1.5rem;
+			border-bottom: 1px solid white;
+			margin-bottom: 20px;
+			text-align: left;
+			letter-spacing: 5px;
+		}
+		p {
+			font-size: 1.2rem;
+			line-height: 1.5rem;
+			text-align: left;
+			word-wrap: break-word;
+			word-break: keep-all;
+		}
+	}
+	.relation-container {
+		.header {
+			border-bottom: 1px solid white;
+			line-height: 25px;
+		}
+		&.good {
+			.header {
+				text-align: left;
+			}
+		}
+		&.bad {
+			.header {
+				text-align: right;
+			}
+		}
+	}
+	.relation-box {
+		margin-top: 5px;
+		border-radius: 20px;
+		text-align: center;
+		padding: 8px 0;
+		img {
+			height: 100px;
+			border-radius: 50%;
+			margin-right: 5px;
+			margin-left: 5px;
+			border: 3px solid white;
+		}
+		&.good {
+			background-color: lightblue;
+		}
+		&.bad {
+			background-color: lightsalmon;
+		}
+	}
+	.btn-menu {
+		margin-top: 20px;
+	}
+}
