@@ -118,7 +118,10 @@ const Result = ({ match }) => {
 					<span>%</span> {Constants.percentage[lang]}
 				</p>
 			</div> */}
-			<Link to="/" className="btn btn-secondary btn-rounded btn-menu">
+			<Link
+				to={`${process.env.PUBLIC_URL}/`}
+				className="btn btn-secondary btn-rounded btn-menu"
+			>
 				<TiArrowBack />
 				{Constants.backToMenu[lang]}
 			</Link>
