@@ -5,6 +5,7 @@ import { LanguageContext } from "../LanguageContext";
 import Constants from "../constants";
 import images from "../assets";
 import Share from "./Share";
+import Count from "./Count";
 
 import "../styles/landing.scss";
 
@@ -31,6 +32,7 @@ const Landing = () => {
 					imageUrl={`${Constants.s3BaseUrl}/landing.jpg`}
 					sharedUrl={window.location.origin}
 				/>
+				<Count label={Constants.participants[lang]} number="50000" />
 				<img
 					src={images.captain_america.default}
 					alt="captain_america"

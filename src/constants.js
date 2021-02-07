@@ -18,6 +18,10 @@ const Constants = {
 		kr: "알아보기",
 		en: "Start",
 	},
+	participants: {
+		kr: "총 참여자 수",
+		en: "Number of Participants",
+	},
 	backToMenu: {
 		kr: "다시하기",
 		en: "Back to Menu",
