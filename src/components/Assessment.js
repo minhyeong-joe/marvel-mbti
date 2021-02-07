@@ -5,6 +5,7 @@ import { TiArrowBack } from "react-icons/ti";
 import { LanguageContext } from "../LanguageContext";
 import { questions } from "../questions";
 import Constants from "../constants";
+import ProgressBar from "./ProgressBar";
 
 const Assessment = ({ history }) => {
 	const [lang, _] = useContext(LanguageContext);
@@ -32,17 +33,7 @@ const Assessment = ({ history }) => {
 
 	return (
 		<>
-			<div className="progress">
-				<p className="question-counter">
-					{currentQ + 1} / {questions.length}
-				</p>
-				<div className="progress-bar">
-					<div
-						className="progress-percentage"
-						style={{ width: `${((currentQ + 1) / questions.length) * 100}%` }}
-					></div>
-				</div>
-			</div>
+			<ProgressBar current={currentQ} total={questions.length} />
 			<div className="question-container" key={currentQ}>
 				<h1 className="number">Q.{currentQ + 1}</h1>
 				<h2 className="prompt">{questions[currentQ].prompt[lang]}</h2>
