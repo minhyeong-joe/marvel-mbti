@@ -17,7 +17,7 @@ const Assessment = ({ history }) => {
 			setCurrentQ(currentQ + 1);
 		} else {
 			const result = computeResult();
-			history.push(`/result/${result}`);
+			history.push(`${process.env.PUBLIC_URL}/result/${result}`);
 		}
 	};
 
