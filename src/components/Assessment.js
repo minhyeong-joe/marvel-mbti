@@ -4,10 +4,10 @@ import { TiArrowBack } from "react-icons/ti";
 
 import { LanguageContext } from "../LanguageContext";
 import { questions } from "../questions";
-import Constants from "../language";
+import Constants from "../constants";
 
 const Assessment = ({ history }) => {
-	const [lang, setLang] = useContext(LanguageContext);
+	const [lang, _] = useContext(LanguageContext);
 	const [currentQ, setCurrentQ] = useState(0);
 	const [scores, setScores] = useState({ IvsE: 0, SvsN: 0, TvsF: 0, JvsP: 0 });
 

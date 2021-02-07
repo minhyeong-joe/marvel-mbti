@@ -1,4 +1,5 @@
 const Constants = {
+	s3BaseUrl: "https://marvel-mbti.s3-us-west-1.amazonaws.com",
 	appName: {
 		kr:
 			"<span>M</span><span>B</span><span>T</span><span>I</span> 로 보는<br />나의 <span>마블</span> 캐릭터",
@@ -16,10 +17,6 @@ const Constants = {
 	start: {
 		kr: "알아보기",
 		en: "Start",
-	},
-	share: {
-		kr: "친구들에게 공유",
-		en: "Share with Friends",
 	},
 	backToMenu: {
 		kr: "다시하기",

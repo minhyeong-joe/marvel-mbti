@@ -1,0 +1,18 @@
+.language-select-container {
+	margin-left: 20px;
+	padding-bottom: 10px;
+	svg {
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+}
+.language-select {
+	color: black;
+	padding: 5px 10px;
+	border-radius: 12px;
+	outline: none;
+	transition: border-color 0.15s ease-in;
+	&:hover {
+		border-color: black;
+	}
+}

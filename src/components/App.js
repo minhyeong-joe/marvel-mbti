@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { FaGlobe } from "react-icons/fa";
 
-import "../styles/reset.scss";
-import "../styles/main.scss";
 import { LanguageProvider } from "../LanguageContext";
 import Landing from "./Landing";
 import Assessment from "./Assessment";
 import Result from "./Result";
 import LanguageSwitch from "./LanguageSwitch";
+import "../styles/reset.scss";
+import "../styles/main.scss";
 
 const App = () => {
 	useEffect(() => {
@@ -24,10 +23,7 @@ const App = () => {
 						<Route path="/assessment" exact component={Assessment} />
 						<Route path="/result/:mbti" exact component={Result} />
 					</div>
-					<div className="language-select-container">
-						<FaGlobe color="white" />
-						<LanguageSwitch />
-					</div>
+					<LanguageSwitch />
 				</div>
 			</LanguageProvider>
 		</BrowserRouter>

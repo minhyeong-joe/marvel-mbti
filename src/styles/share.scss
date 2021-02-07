@@ -1,0 +1,53 @@
+.share-header {
+	margin-top: 20px;
+	overflow: hidden;
+	&::before,
+	&::after {
+		content: "";
+		background-color: white;
+		display: inline-block;
+		height: 1px;
+		position: relative;
+		vertical-align: middle;
+		width: 40%;
+	}
+
+	&::before {
+		right: 0.5em;
+		margin-left: -50%;
+	}
+
+	&::after {
+		left: 0.5em;
+		margin-right: -50%;
+	}
+}
+
+.btn.btn-icon {
+	padding: 0;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	& > * {
+		margin-top: 8px;
+	}
+	& > img {
+		height: 35px;
+	}
+}
+
+.icon-btn-container {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	button {
+		margin-left: 5px;
+		margin-right: 5px;
+		&.katalk {
+			background-color: #ffe812;
+		}
+		&.facebook {
+			background-color: #4267b2;
+		}
+	}
+}
