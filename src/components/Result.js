@@ -21,21 +21,17 @@ const Result = ({ match }) => {
 	const onClickCopyLink = (link) => {
 		setShowFlashMessage(false);
 
-		navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-			if (result.state == "granted" || result.state == "prompt") {
-				navigator.clipboard.writeText(link).then(
-					() => {
-						setShowFlashMessage(true);
-						setTimeout(() => {
-							setShowFlashMessage(false);
-						}, 1500);
-					},
-					() => {
-						console.log("failed to copy to clipboard");
-					}
-				);
+		navigator.clipboard.writeText(link).then(
+			() => {
+				setShowFlashMessage(true);
+				setTimeout(() => {
+					setShowFlashMessage(false);
+				}, 1500);
+			},
+			() => {
+				console.log("failed to copy to clipboard");
 			}
-		});
+		);
 	};
 
 	const onClickKakaotalk = (result) => {
