@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebookF, FaCopy } from "react-icons/fa";
 
 import images from "../assets";
+import FlashMessage from "./FlashMessage";
 import "../styles/share.scss";
 
 const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
+	const [visible, setVisible] = useState(false);
+
 	const onClickCopyLink = () => {
+		setVisible(false);
 		window.navigator.clipboard.writeText(sharedUrl).then(
 			() => {
-				console.log("copied to clipboard");
+				setVisible(true);
+				setTimeout(() => {
+					setVisible(false);
+				}, 1500);
 			},
 			() => {
 				console.log("failed to copy to clipboard");
@@ -36,7 +43,7 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 		<>
 			<h3 className="share-header">{header}</h3>
 			<div className="icon-btn-container">
-				<button className="btn btn-icon" onClick={onClickCopyLink}>
+				<button className="btn btn-icon copy" onClick={onClickCopyLink}>
 					<FaCopy color="black" />
 				</button>
 				<button className="btn btn-icon katalk" onClick={onClickKakaotalk}>
@@ -46,6 +53,7 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 					<FaFacebookF />
 				</button>
 			</div>
+			{visible && <FlashMessage message="Link copied to Clipboard!" />}
 		</>
 	);
 };
