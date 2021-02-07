@@ -29,7 +29,7 @@ const Assessment = ({ history }) => {
 		result += scores.JvsP <= 0 ? "j" : "p";
 		return result;
 	};
-	console.log(scores);
+
 	return (
 		<>
 			<div className="progress">

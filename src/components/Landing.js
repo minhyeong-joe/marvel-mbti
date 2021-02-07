@@ -9,7 +9,6 @@ import images from "../assets";
 const Landing = () => {
 	const [lang, setLang] = useContext(LanguageContext);
 	const [showFlashMessage, setShowFlashMessage] = useState(false);
-	console.log(lang);
 
 	const onClickCopyLink = (link) => {
 		setShowFlashMessage(false);
@@ -29,6 +28,22 @@ const Landing = () => {
 				);
 			}
 		});
+	};
+
+	const onClickKakaotalk = () => {
+		const feed = {
+			objectType: "feed",
+			content: {
+				title: Constants.appName[lang].replace(/(<([^>]+)>)/gi, ""),
+				description: Constants.appSubTitle[lang].replace(/(<([^>]+)>)/gi, ""),
+				imageUrl: `https://marvel-mbti.s3-us-west-1.amazonaws.com/landing.jpg`,
+				link: {
+					webUrl: window.location.origin,
+					mobileWebUrl: window.location.origin,
+				},
+			},
+		};
+		window.Kakao.Link.sendDefault(feed);
 	};
 
 	return (
@@ -54,7 +69,7 @@ const Landing = () => {
 						>
 							<FaCopy color="black" />
 						</button>
-						<button className="btn btn-icon katalk">
+						<button className="btn btn-icon katalk" onClick={onClickKakaotalk}>
 							<img src={images.katalk.default} alt="katalk" />
 						</button>
 						<button className="btn btn-icon facebook">

@@ -38,13 +38,41 @@ const Result = ({ match }) => {
 		});
 	};
 
+	const onClickKakaotalk = (result) => {
+		let feed = {
+			objectType: "feed",
+		};
+		if (result) {
+			feed.content = {
+				title: Constants.appName[lang].replace(/(<([^>]+)>)/gi, ""),
+				description: `${marvelChar.name[lang]} - ${marvelChar.adj[lang]} ${marvelChar.job[lang]}`,
+				imageUrl: marvelChar.image_url,
+				link: {
+					webUrl: window.location.href,
+					mobileWebUrl: window.location.href,
+				},
+			};
+		} else {
+			feed.content = {
+				title: Constants.appName[lang].replace(/(<([^>]+)>)/gi, ""),
+				description: Constants.appSubTitle[lang].replace(/(<([^>]+)>)/gi, ""),
+				imageUrl: `https://marvel-mbti.s3-us-west-1.amazonaws.com/landing.jpg`,
+				link: {
+					webUrl: window.location.origin,
+					mobileWebUrl: window.location.origin,
+				},
+			};
+		}
+		window.Kakao.Link.sendDefault(feed);
+	};
+
 	return (
 		<div className="result-container">
 			<h2 className="adj">{marvelChar.adj[lang]}</h2>
 			<h2 className="job">{marvelChar.job[lang]}</h2>
 			<img
 				className="main-image"
-				src={images[mbti].default}
+				src={marvelChar.image_url}
 				alt={`${marvelChar.name[lang]}`}
 			/>
 			<h3 className="name">{marvelChar.name[lang]}</h3>
@@ -59,7 +87,7 @@ const Result = ({ match }) => {
 						{marvelChar.good_relation.map((good) => {
 							return (
 								<img
-									src={images[good].default}
+									src={results[good].image_url}
 									className="relation-image"
 									alt={good}
 									key={good}
@@ -74,7 +102,7 @@ const Result = ({ match }) => {
 						{marvelChar.bad_relation.map((bad) => {
 							return (
 								<img
-									src={images[bad].default}
+									src={results[bad].image_url}
 									className="relation-image"
 									alt={bad}
 									key={bad}
@@ -103,7 +131,10 @@ const Result = ({ match }) => {
 					>
 						<FaCopy color="black" />
 					</button>
-					<button className="btn btn-icon katalk">
+					<button
+						className="btn btn-icon katalk"
+						onClick={() => onClickKakaotalk(true)}
+					>
 						<img src={images.katalk.default} alt="katalk" />
 					</button>
 					<button className="btn btn-icon facebook">
@@ -118,7 +149,10 @@ const Result = ({ match }) => {
 					>
 						<FaCopy color="black" />
 					</button>
-					<button className="btn btn-icon katalk">
+					<button
+						className="btn btn-icon katalk"
+						onClick={() => onClickKakaotalk(false)}
+					>
 						<img src={images.katalk.default} alt="katalk" />
 					</button>
 					<button className="btn btn-icon facebook">

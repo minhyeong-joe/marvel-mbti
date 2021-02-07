@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { FaGlobe } from "react-icons/fa";
 
@@ -11,6 +11,9 @@ import Result from "./Result";
 import LanguageSwitch from "./LanguageSwitch";
 
 const App = () => {
+	useEffect(() => {
+		window.Kakao.init("47bbe7823395f610d6c8a559041758ca");
+	});
 	return (
 		<BrowserRouter>
 			<LanguageProvider>
