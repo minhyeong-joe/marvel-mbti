@@ -10,17 +10,27 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 
 	const onClickCopyLink = () => {
 		setVisible(false);
-		window.navigator.clipboard.writeText(sharedUrl).then(
-			() => {
-				setVisible(true);
-				setTimeout(() => {
-					setVisible(false);
-				}, 1500);
-			},
-			() => {
-				console.log("failed to copy to clipboard");
-			}
-		);
+		// window.navigator.clipboard.writeText(sharedUrl).then(
+		// 	() => {
+		// 		setVisible(true);
+		// 		setTimeout(() => {
+		// 			setVisible(false);
+		// 		}, 1500);
+		// 	},
+		// 	() => {
+		// 		console.log("failed to copy to clipboard");
+		// 	}
+		// );
+		const text = document.createElement("textarea");
+		document.body.appendChild(text);
+		text.value = sharedUrl;
+		text.select();
+		document.execCommand("copy");
+		document.body.removeChild(text);
+		setVisible(true);
+		setTimeout(() => {
+			setVisible(false);
+		}, 1500);
 	};
 
 	const onClickKakaotalk = () => {
