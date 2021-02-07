@@ -22,7 +22,7 @@ const Constants = {
 		en: "Share with Friends",
 	},
 	backToMenu: {
-		kr: "처음부터",
+		kr: "다시하기",
 		en: "Back to Menu",
 	},
 	description: {
@@ -36,6 +36,18 @@ const Constants = {
 	badWith: {
 		kr: "나쁜 상성",
 		en: "Don't get along with",
+	},
+	percentage: {
+		kr: "의 참가자가 이 유형에 해당되요!",
+		en: "of all participants belong to this category!",
+	},
+	shareResult: {
+		kr: "결과 공유하기",
+		en: "Share Result",
+	},
+	shareApp: {
+		kr: "앱 공유하기",
+		en: "Share App",
 	},
 };
 

@@ -29,6 +29,18 @@
 .btn-rounded {
 	border-radius: 20px;
 }
+.btn-icon {
+	padding: 0;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	& > * {
+		margin-top: 8px;
+	}
+	& > img {
+		height: 35px;
+	}
+}
 
 // App
 .app-container {
@@ -61,6 +73,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 0 15px;
 }
 .language-select-container {
 	margin-left: 20px;
@@ -140,6 +153,9 @@
 }
 
 @media screen and (max-width: 700px) {
+	.app-container {
+		max-width: 100%;
+	}
 	.app-title {
 		font-size: 3rem;
 	}
@@ -202,7 +218,6 @@
 	align-items: center;
 	text-align: center;
 	margin-bottom: 80px;
-	padding: 0 10px;
 	animation: zoomIn forwards 0.5s;
 
 	.number {
@@ -256,9 +271,10 @@
 			filter: brightness(150%);
 		}
 	}
-}
-.btn-menu {
-	margin-bottom: 30px;
+
+	.btn-menu {
+		margin-bottom: 30px;
+	}
 }
 
 @keyframes zoomIn {
@@ -276,7 +292,7 @@
 .result-container {
 	margin-top: 80px;
 	text-align: center;
-	padding: 0 10px;
+	margin-bottom: 20px;
 	.adj {
 		font-size: 1.4rem;
 		font-weight: 600;
@@ -330,6 +346,103 @@
 			text-align: left;
 			word-wrap: break-word;
 			word-break: keep-all;
+		}
+	}
+	.relation-container {
+		.header {
+			border-bottom: 1px solid white;
+			line-height: 25px;
+		}
+		&.good {
+			.header {
+				text-align: left;
+			}
+		}
+		&.bad {
+			.header {
+				text-align: right;
+			}
+		}
+	}
+	.relation-box {
+		margin-top: 5px;
+		border-radius: 20px;
+		text-align: center;
+		padding: 8px 0;
+		img {
+			height: 100px;
+			border-radius: 50%;
+			margin-right: 5px;
+			margin-left: 5px;
+			border: 3px solid white;
+		}
+		&.good {
+			background-color: lightblue;
+		}
+		&.bad {
+			background-color: lightsalmon;
+		}
+	}
+	.percentage-container {
+		background-color: rgba(255, 255, 255, 0.5);
+		padding: 10px 20px;
+		margin-top: 20px;
+		border-radius: 20px;
+		span,
+		p {
+			color: #1b1b1b;
+		}
+		span {
+			font-size: 2rem;
+			color: black;
+			border-bottom: 3px double $color-text-shadow;
+		}
+		p {
+			font-size: 1.2rem;
+		}
+	}
+	.btn-menu {
+		margin-top: 20px;
+	}
+	.share-container {
+		.header {
+			margin-top: 20px;
+			overflow: hidden;
+			&::before,
+			&::after {
+				content: "";
+				background-color: white;
+				display: inline-block;
+				height: 1px;
+				position: relative;
+				vertical-align: middle;
+				width: 40%;
+			}
+
+			&::before {
+				right: 0.5em;
+				margin-left: -50%;
+			}
+
+			&::after {
+				left: 0.5em;
+				margin-right: -50%;
+			}
+		}
+	}
+	.icon-btn-container {
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+		button {
+			margin-left: 5px;
+			margin-right: 5px;
+			&.katalk {
+				background-color: #ffe812;
+			}
+			&.facebook {
+				background-color: #4267b2;
+			}
 		}
 	}
 }
