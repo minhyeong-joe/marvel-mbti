@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
 import { FaCopy, FaFacebookF } from "react-icons/fa";
+
+import FlashMessage from "react-flash-message";
 
 import Constants from "../language";
 
@@ -12,8 +14,30 @@ import images from "../assets";
 
 const Result = ({ match }) => {
 	const [lang, setLang] = useContext(LanguageContext);
+	const [showFlashMessage, setShowFlashMessage] = useState(false);
 	const { mbti } = match.params;
 	const marvelChar = results[mbti];
+
+	const onClickCopyLink = (link) => {
+		setShowFlashMessage(false);
+
+		navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
+			if (result.state == "granted" || result.state == "prompt") {
+				navigator.clipboard.writeText(link).then(
+					() => {
+						setShowFlashMessage(true);
+						setTimeout(() => {
+							setShowFlashMessage(false);
+						}, 1500);
+					},
+					() => {
+						console.log("failed to copy to clipboard");
+					}
+				);
+			}
+		});
+	};
+
 	return (
 		<div className="result-container">
 			<h2 className="adj">{marvelChar.adj[lang]}</h2>
@@ -34,7 +58,12 @@ const Result = ({ match }) => {
 					<div className="good relation-box">
 						{marvelChar.good_relation.map((good) => {
 							return (
-								<img src={images[good].default} className="relation-image" />
+								<img
+									src={images[good].default}
+									className="relation-image"
+									alt={good}
+									key={good}
+								/>
 							);
 						})}
 					</div>
@@ -44,7 +73,12 @@ const Result = ({ match }) => {
 					<div className="bad relation-box">
 						{marvelChar.bad_relation.map((bad) => {
 							return (
-								<img src={images[bad].default} className="relation-image" />
+								<img
+									src={images[bad].default}
+									className="relation-image"
+									alt={bad}
+									key={bad}
+								/>
 							);
 						})}
 					</div>
@@ -63,7 +97,10 @@ const Result = ({ match }) => {
 			<div className="share-container">
 				<h3 className="header">{Constants.shareResult[lang]}</h3>
 				<div className="icon-btn-container">
-					<button className="btn btn-icon">
+					<button
+						className="btn btn-icon"
+						onClick={() => onClickCopyLink(window.location.href)}
+					>
 						<FaCopy color="black" />
 					</button>
 					<button className="btn btn-icon katalk">
@@ -75,7 +112,10 @@ const Result = ({ match }) => {
 				</div>
 				<h3 className="header">{Constants.shareApp[lang]}</h3>
 				<div className="icon-btn-container">
-					<button className="btn btn-icon">
+					<button
+						className="btn btn-icon"
+						onClick={() => onClickCopyLink(window.location.origin)}
+					>
 						<FaCopy color="black" />
 					</button>
 					<button className="btn btn-icon katalk">
@@ -86,6 +126,13 @@ const Result = ({ match }) => {
 					</button>
 				</div>
 			</div>
+			{showFlashMessage && (
+				<FlashMessage duration={1500}>
+					<div className="flash-message">
+						<p>Link copied to Clipboard!</p>
+					</div>
+				</FlashMessage>
+			)}
 		</div>
 	);
 };
