@@ -15,26 +15,14 @@ const App = () => {
 		window.Kakao.init("47bbe7823395f610d6c8a559041758ca");
 	});
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<LanguageProvider>
 				<div className="app-container">
 					<div className="bg-overlay"></div>
 					<div className="main-content">
-						<Route
-							path={`${process.env.PUBLIC_URL}/`}
-							exact
-							component={Landing}
-						/>
-						<Route
-							path={`${process.env.PUBLIC_URL}/assessment`}
-							exact
-							component={Assessment}
-						/>
-						<Route
-							path={`${process.env.PUBLIC_URL}/result/:mbti`}
-							exact
-							component={Result}
-						/>
+						<Route path="/" exact component={Landing} />
+						<Route path="/assessment" exact component={Assessment} />
+						<Route path="/result/:mbti" exact component={Result} />
 					</div>
 					<div className="language-select-container">
 						<FaGlobe color="white" />

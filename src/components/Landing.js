@@ -57,10 +57,7 @@ const Landing = () => {
 				dangerouslySetInnerHTML={{ __html: Constants.appName[lang] }}
 			></h1>
 			<div className="btn-container">
-				<Link
-					to={`${process.env.PUBLIC_URL}/assessment`}
-					className="btn btn-primary start-btn"
-				>
+				<Link to="/assessment" className="btn btn-primary start-btn">
 					{Constants.start[lang]}
 				</Link>
 				<div className="share-container">

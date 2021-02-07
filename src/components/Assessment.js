@@ -17,7 +17,7 @@ const Assessment = ({ history }) => {
 			setCurrentQ(currentQ + 1);
 		} else {
 			const result = computeResult();
-			history.push(`${process.env.PUBLIC_URL}/result/${result}`);
+			history.push(`/result/${result}`);
 		}
 	};
 
@@ -72,10 +72,7 @@ const Assessment = ({ history }) => {
 				</div>
 			</div>
 
-			<Link
-				to={`${process.env.PUBLIC_URL}/`}
-				className="btn btn-secondary btn-rounded btn-menu"
-			>
+			<Link to="/" className="btn btn-secondary btn-rounded btn-menu">
 				<TiArrowBack />
 				{Constants.backToMenu[lang]}
 			</Link>
