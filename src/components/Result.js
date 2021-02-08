@@ -7,6 +7,7 @@ import Constants from "../constants";
 import { LanguageContext } from "../LanguageContext";
 import { results } from "../results";
 import Share from "./Share";
+import CharacterDetail from "./CharacterDetail";
 import "../styles/result.scss";
 
 const Result = ({ match }) => {
@@ -29,30 +30,20 @@ const Result = ({ match }) => {
 
 	return (
 		<div className="result-container">
-			<h2 className="adj">{marvelChar.adj[lang]}</h2>
-			<h2 className="job">{marvelChar.job[lang]}</h2>
-			<img
-				className="main-image"
-				src={marvelChar.image_url}
-				alt={`${marvelChar.name[lang]}`}
-			/>
-			<h3 className="name">{marvelChar.name[lang]}</h3>
-			<div className="description-container">
-				<h3 className="description-header">{Constants.description[lang]}</h3>
-				<p>{marvelChar.description[lang]}</p>
-			</div>
+			<CharacterDetail character={marvelChar} />
 			<div className="relations-container">
 				<div className="good relation-container">
 					<h3 className="header">{Constants.goodWith[lang]}</h3>
 					<div className="good relation-box">
 						{marvelChar.good_relation.map((good) => {
 							return (
-								<img
-									src={results[good].image_url}
-									className="relation-image"
-									alt={good}
-									key={good}
-								/>
+								<Link to={`/relation/good/${good}`} key={good}>
+									<img
+										src={results[good].image_url}
+										className="relation-image"
+										alt={good}
+									/>
+								</Link>
 							);
 						})}
 					</div>
@@ -62,18 +53,19 @@ const Result = ({ match }) => {
 					<div className="bad relation-box">
 						{marvelChar.bad_relation.map((bad) => {
 							return (
-								<img
-									src={results[bad].image_url}
-									className="relation-image"
-									alt={bad}
-									key={bad}
-								/>
+								<Link to={`/relation/bad/${bad}`} key={bad}>
+									<img
+										src={results[bad].image_url}
+										className="relation-image"
+										alt={bad}
+									/>
+								</Link>
 							);
 						})}
 					</div>
 				</div>
 			</div>
-			{count && totalCount && (
+			{count !== null && totalCount !== null && (
 				<p className="percentage">
 					<span>
 						<span className="percent-num">

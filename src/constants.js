@@ -51,6 +51,18 @@ const Constants = {
 		kr: "앱 공유하기",
 		en: "Share App",
 	},
+	goodRelationHeader: {
+		kr: "당신과 상성이 좋은",
+		en: "You go along well with",
+	},
+	badRelationHeader: {
+		kr: "당신과 상성이 좋지 않은",
+		en: "You don't go along with",
+	},
+	goBack: {
+		kr: "뒤로 가기",
+		en: "Go Back",
+	},
 };
 
 export default Constants;

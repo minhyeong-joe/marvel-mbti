@@ -5,6 +5,7 @@ import { LanguageProvider } from "../LanguageContext";
 import Landing from "./Landing";
 import Assessment from "./Assessment";
 import Result from "./Result";
+import Relation from "./Relation";
 import LanguageSwitch from "./LanguageSwitch";
 import "../styles/reset.scss";
 import "../styles/main.scss";
@@ -23,6 +24,11 @@ const App = () => {
 						<Route path="/" exact component={Landing} />
 						<Route path="/assessment" exact component={Assessment} />
 						<Route path="/result/:mbti" exact component={Result} />
+						<Route
+							path="/relation/:relation/:mbti"
+							exact
+							component={Relation}
+						/>
 					</div>
 					{/* Add language switch when all English texts are translated */}
 					{/* <LanguageSwitch /> */}
