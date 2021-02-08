@@ -38,6 +38,14 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 		window.Kakao.Link.sendDefault(feed);
 	};
 
+	const onClickFacebook = () => {
+		window.FB.ui({
+			display: "popup",
+			method: "share",
+			href: sharedUrl,
+		});
+	};
+
 	return (
 		<>
 			<h3 className="share-header">{header}</h3>
@@ -48,7 +56,7 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 				<button className="btn btn-icon katalk" onClick={onClickKakaotalk}>
 					<img src={images.katalk.default} alt="katalk" />
 				</button>
-				<button className="btn btn-icon facebook">
+				<button className="btn btn-icon facebook" onClick={onClickFacebook}>
 					<FaFacebookF />
 				</button>
 			</div>
