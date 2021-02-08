@@ -1,25 +1,30 @@
 @import "./variables";
+@import "./typography";
 
 .app-title {
-	font-size: 5rem;
+	font-size: 4rem;
 	text-align: center;
 	text-shadow: 1px 1px 3px $color-text-shadow;
 	color: #ddd;
 	span:first-child {
 		// M
 		color: #3c59e5;
+		font-family: $font-outline;
 	}
 	span:nth-child(2) {
 		// B
 		color: #d246c7;
+		font-family: $font-outline;
 	}
 	span:nth-child(3) {
 		// T
 		color: #ff866a;
+		font-family: $font-outline;
 	}
 	span:nth-child(4) {
 		// I
 		color: #f9f871;
+		font-family: $font-outline;
 	}
 	span:last-child {
 		// 마블
@@ -44,6 +49,7 @@
 .btn.start-btn {
 	margin-top: 60px;
 	margin-bottom: 120px;
+	font-family: $font-title;
 }
 .landing-image {
 	height: 250px;

@@ -1,8 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Black+Han+Sans&family=Sunflower:wght@500&display=swap");
+@font-face {
+	font-family: "KOTRA_BOLD-Bold";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "SDSamliphopangche_Outline";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
 
-$font-title: "Black Han Sans", sans-serif;
+$font-title: "KOTRA_BOLD-Bold", sans-serif;
 $font-primary: "Do Hyeon", sans-serif;
 $font-secondary: "Sunflower", sans-serif;
+$font-outline: "SDSamliphopangche_Outline", sans-serif;
 
 h1,
 h2 {
