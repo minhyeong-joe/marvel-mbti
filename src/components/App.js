@@ -13,6 +13,7 @@ const App = () => {
 	useEffect(() => {
 		window.Kakao.init("47bbe7823395f610d6c8a559041758ca");
 	});
+
 	return (
 		<BrowserRouter>
 			<LanguageProvider>
@@ -23,7 +24,8 @@ const App = () => {
 						<Route path="/assessment" exact component={Assessment} />
 						<Route path="/result/:mbti" exact component={Result} />
 					</div>
-					<LanguageSwitch />
+					{/* Add language switch when all English texts are translated */}
+					{/* <LanguageSwitch /> */}
 				</div>
 			</LanguageProvider>
 		</BrowserRouter>

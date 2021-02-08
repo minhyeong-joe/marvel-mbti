@@ -21,13 +21,16 @@ mongoose.connection.on("error", (err) =>
 const app = express();
 app.use(cors());
 
-console.log(__dirname);
 app.use(express.static(path.join(__dirname, "../build")));
 
 app.use(bodyParser.json());
 
 const participantRoute = require("./routes/participant");
 app.use("/statistics", participantRoute);
+
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(PORT, () => {
 	console.log("Server running on port " + PORT);

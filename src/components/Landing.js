@@ -19,7 +19,7 @@ const Landing = () => {
 			const { data } = await axios.get(Constants.backendUrl);
 			setCount(data.count);
 		})();
-	}, []);
+	}, [setCount]);
 
 	return (
 		<div className="landing">

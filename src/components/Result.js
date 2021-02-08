@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { TiArrowBack } from "react-icons/ti";
 
 import Constants from "../constants";
@@ -10,8 +11,21 @@ import "../styles/result.scss";
 
 const Result = ({ match }) => {
 	const [lang, _] = useContext(LanguageContext);
+	const [totalCount, setTotalCount] = useState(null);
+	const [count, setCount] = useState(null);
 	const { mbti } = match.params;
 	const marvelChar = results[mbti];
+
+	useEffect(() => {
+		(async () => {
+			const { data: all } = await axios.get(Constants.backendUrl);
+			const { data: specific_mbti } = await axios.get(
+				`${Constants.backendUrl}/${mbti}`
+			);
+			setTotalCount(all.count);
+			setCount(specific_mbti.count);
+		})();
+	}, [count, mbti, setCount]);
 
 	return (
 		<div className="result-container">
@@ -59,12 +73,18 @@ const Result = ({ match }) => {
 					</div>
 				</div>
 			</div>
-			<p className="percentage">
-				<span>
-					<span className="percent-num">0.0</span> %
-				</span>{" "}
-				{Constants.percentage[lang]}
-			</p>
+			{count && totalCount && (
+				<p className="percentage">
+					<span>
+						<span className="percent-num">
+							{((count / totalCount) * 100).toFixed(1)}
+						</span>{" "}
+						%
+					</span>{" "}
+					{Constants.percentage[lang]}
+				</p>
+			)}
+
 			<Link to="/" className="btn btn-secondary btn-rounded btn-menu">
 				<TiArrowBack />
 				{Constants.backToMenu[lang]}
