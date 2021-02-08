@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaFacebookF, FaCopy } from "react-icons/fa";
-import { Helmet } from "react-helmet";
 
 import images from "../assets";
 import FlashMessage from "./FlashMessage";
