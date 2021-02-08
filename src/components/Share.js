@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaFacebookF, FaCopy } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 import images from "../assets";
 import FlashMessage from "./FlashMessage";
@@ -39,11 +40,28 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 	};
 
 	const onClickFacebook = () => {
+		const head = document.querySelector("head");
+		const original = head.innerHTML;
+		const newMetaHtml = `
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="${sharedUrl}">
+		<meta property="og:title" content="${title}">
+		<meta property="og:description" content="${description}">
+		<meta property="og:image" content="${imageUrl}">
+	
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="${sharedUrl}">
+		<meta property="twitter:title" content="${title}">
+		<meta property="twitter:description" content="${description}">
+		<meta property="twitter:image" content="${imageUrl}">`;
+		head.innerHTML += newMetaHtml;
 		window.FB.ui({
 			display: "popup",
 			method: "share",
 			href: sharedUrl,
 		});
+		head.innerHTML = original;
 	};
 
 	return (
