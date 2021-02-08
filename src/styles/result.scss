@@ -7,7 +7,6 @@
 	margin-bottom: 20px;
 	.adj {
 		font-size: 1.4rem;
-		font-weight: 600;
 		// text-shadow: 1px 1px 1px $color-text-shadow;
 		color: #b1b1b1;
 		letter-spacing: 0.3rem;
@@ -17,7 +16,6 @@
 	}
 	.job {
 		font-size: 1.8rem;
-		font-weight: 600;
 		line-height: 3rem;
 		// text-shadow: 1px 1px 3px $color-text-shadow;
 	}
@@ -31,7 +29,7 @@
 	}
 	.name {
 		font-size: 2rem;
-		font-family: $font-title;
+		font-family: $font-primary;
 		position: relative;
 		display: inline-block;
 		background-color: white;
@@ -41,6 +39,7 @@
 		border: 1px solid #1b1b1b;
 		border-radius: 10px;
 		box-shadow: 1px 1px 3px #1b1b1b;
+		letter-spacing: 2px;
 	}
 	.description-container {
 		background-color: rgba(0, 0, 0, 0.75);
@@ -56,7 +55,7 @@
 		}
 		p {
 			font-size: 1.2rem;
-			line-height: 1.5rem;
+			line-height: 1.8rem;
 			text-align: left;
 			word-wrap: break-word;
 			word-break: keep-all;
@@ -107,6 +106,9 @@
 	color: #1b1b1b;
 	border-radius: 25px;
 	margin-top: 20px;
+	word-wrap: break-word;
+	word-break: keep-all;
+	line-height: 1.5rem;
 	span {
 		color: inherit;
 		font-size: 1.4rem;
