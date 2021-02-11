@@ -6,9 +6,9 @@ import Landing from "./Landing";
 import Assessment from "./Assessment";
 import Result from "./Result";
 import Relation from "./Relation";
-import LanguageSwitch from "./LanguageSwitch";
 import "../styles/reset.scss";
 import "../styles/main.scss";
+import Footer from "./Footer";
 
 const App = () => {
 	useEffect(() => {
@@ -30,7 +30,7 @@ const App = () => {
 							component={Relation}
 						/>
 					</div>
-					<Route path="*" component={LanguageSwitch} />
+					<Route path="*" component={Footer} />
 				</div>
 			</LanguageProvider>
 		</BrowserRouter>

@@ -1,0 +1,52 @@
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 8vh;
+}
+.credit {
+	margin-right: 20px;
+	p {
+		font-size: 1.2rem;
+		display: inline-block;
+		&:first-child {
+			margin-right: 20px;
+		}
+	}
+	span {
+		margin-right: 10px;
+	}
+	a {
+		vertical-align: middle;
+		margin-left: 5px;
+		font-size: 25px;
+		color: white;
+		display: inline-block;
+		padding: 1px;
+		&.insta {
+			background: linear-gradient(
+				45deg,
+				#405de6,
+				#5851db,
+				#833ab4,
+				#c13584,
+				#e1306c,
+				#fd1d1d
+			);
+			border-radius: 8px;
+			svg {
+				margin-bottom: -5px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.credit p {
+		display: block;
+		text-align: right;
+		&:first-child {
+			margin-right: 0;
+		}
+	}
+}

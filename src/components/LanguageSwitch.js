@@ -7,9 +7,6 @@ import "../styles/languageSelect.scss";
 const LanguageSwitch = ({ history, location }) => {
 	const [lang, setLang] = useContext(LanguageContext);
 
-	console.log(location);
-	console.log(history);
-
 	useEffect(() => {
 		if (location.search === "?en") {
 			setLang("en");

@@ -63,6 +63,24 @@ const Constants = {
 		kr: "뒤로 가기",
 		en: "Go Back",
 	},
+	appDev: {
+		kr: "앱 개발",
+		en: "App Developer",
+	},
+	translate: {
+		kr: "번역 도움",
+		en: "Translation",
+	},
+	appDevName: {
+		kr: "조민형",
+		en: "Billy Joe",
+		sns: "https://github.com/minhyeong-joe",
+	},
+	translatorName: {
+		kr: "미주",
+		en: "Mijoo",
+		sns: "https://www.instagram.com/midew.joojoos/",
+	},
 };
 
 export default Constants;
