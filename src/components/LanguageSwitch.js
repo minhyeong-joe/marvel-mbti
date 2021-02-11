@@ -1,11 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { LanguageContext } from "../LanguageContext";
 import { FaGlobe } from "react-icons/fa";
 
 import "../styles/languageSelect.scss";
 
-const LanguageSwitch = () => {
+const LanguageSwitch = ({ history, location }) => {
 	const [lang, setLang] = useContext(LanguageContext);
+
+	console.log(location);
+	console.log(history);
+
+	useEffect(() => {
+		if (location.search === "?en") {
+			setLang("en");
+			history.replace({ pathname: location.pathname });
+		}
+	});
 
 	const onChangeLanguage = (value) => {
 		setLang(value);

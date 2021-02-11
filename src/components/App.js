@@ -30,8 +30,7 @@ const App = () => {
 							component={Relation}
 						/>
 					</div>
-					{/* Add language switch when all English texts are translated */}
-					{/* <LanguageSwitch /> */}
+					<Route path="*" component={LanguageSwitch} />
 				</div>
 			</LanguageProvider>
 		</BrowserRouter>

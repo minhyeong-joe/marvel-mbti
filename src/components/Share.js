@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaFacebookF, FaCopy } from "react-icons/fa";
 
 import images from "../assets";
 import FlashMessage from "./FlashMessage";
 import "../styles/share.scss";
+import { LanguageContext } from "../LanguageContext";
 
 const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 	const [visible, setVisible] = useState(false);
+	const isEnglish = useContext(LanguageContext)[0] === "en";
+	let shared_url = isEnglish ? sharedUrl + "?en" : sharedUrl;
 
 	const onClickCopyLink = () => {
 		setVisible(false);
 		const text = document.createElement("textarea");
 		document.body.appendChild(text);
-		text.value = sharedUrl;
+		text.value = shared_url;
 		text.select();
 		document.execCommand("copy");
 		document.body.removeChild(text);
@@ -30,8 +33,8 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 				description: description.replace(/(<([^>]+)>)/gi, ""),
 				imageUrl: imageUrl,
 				link: {
-					webUrl: sharedUrl,
-					mobileWebUrl: sharedUrl,
+					webUrl: shared_url,
+					mobileWebUrl: shared_url,
 				},
 			},
 		};
@@ -42,7 +45,7 @@ const Share = ({ header, title, description, imageUrl, sharedUrl }) => {
 		window.FB.ui({
 			display: "popup",
 			method: "share",
-			href: sharedUrl,
+			href: shared_url,
 		});
 	};
 
